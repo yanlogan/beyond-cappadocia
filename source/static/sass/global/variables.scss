@@ -1,0 +1,297 @@
+$w: #fff;
+$gray: #838A9D;
+$gray2: #8B98A7;
+$b: #000;
+$b2: #2A2A30;
+
+$black: #414050;
+$dark-text: #1D1C2E;
+$light-text: #FFF6E9;
+$dark: #2B2B33;
+$orange: #EF7D6E;
+$yellow: #FFDFB3;
+$yellow-light: #FFEED6;
+
+$xxxs-width: 321.98px;
+$xxs-width: 359.98px;
+$xs-width: 575.98px;
+$sm-width: 767.98px;
+$md-width: 991.98px;
+$lg-width: 1339.98px;
+$xl-width: 1469.98px;
+$xxl-width: 1599.98px;
+
+
+@mixin xxxs {
+    @media screen and (min-width: #{$xxs-width}) {
+        @content;
+    }
+}
+
+@mixin xxs {
+    @media screen and (min-width: #{$xxs-width}) {
+        @content;
+    }
+}
+
+@mixin xs {
+    @media screen and (min-width: #{$xs-width}) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media screen and (min-width: #{$sm-width}) {
+        @content;
+    }
+}
+
+
+@mixin md {
+    @media screen and (min-width: #{$md-width}) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @media screen and (min-width: #{$lg-width}) {
+        @content;
+    }
+}
+
+@mixin xl {
+    @media screen and (min-width: #{$xl-width}) {
+        @content;
+    }
+}
+
+@mixin xxl {
+    @media screen and (min-width: #{$xxl-width}) {
+        @content;
+    }
+}
+
+
+@mixin row($mr) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -#{$mr}px;
+    margin-right: -#{$mr}px;
+}
+
+@mixin row-flex() {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@mixin col($colsize, $mrg) {
+    width: calc(100% / 12 * #{$colsize} - #{$mrg*2}px - 0.1px);
+    margin-left: #{$mrg}px;
+    margin-right: #{$mrg}px;
+    word-wrap: break-word;
+}
+
+@mixin coloff($coloffset) {
+    margin-left: calc(100% / 12 * #{$coloffset});
+}
+
+@mixin h($s) {
+    @extend %heading;
+    
+    @if $s == 1 {
+        font-family: 'Merriweather';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 110%;
+        letter-spacing: 0.01em;
+        
+        @include sm {
+            font-size: 32px;
+        }
+
+        @include md {
+            font-size: 42px;
+        }
+
+        @include lg {
+            font-size: 56px;
+        }
+    } @else if $s == 2 {
+        font-family: 'Merriweather';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 28px;
+        
+        @include md {
+            font-size: 32px;
+        }
+        @include lg {
+            font-size: 38px;
+        }
+        @include xl {
+            font-size: 40px;
+            line-height: 48px;
+        }
+    } @else if $s == 3 {
+        font-family: 'Merriweather';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 180%;
+        letter-spacing: -0.01em;
+        
+        @include md {
+            font-size: 22px;
+        }
+        @include lg {
+            font-size: 24px;
+        }
+    } @else if $s == 4 {
+        font-family: 'PT Root UI';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 140%;
+        text-transform: lowercase;
+
+        @include sm {
+            font-size: 16px;
+            line-height: 22px;
+        }
+
+        @include md {
+            font-size: 18px;
+            line-height: 28px;
+            text-transform: none;
+        }
+    }  @else if $s == 5 {
+        font-family: 'PT Root UI';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 140%;
+        text-transform: lowercase;
+
+        @include md {
+            font-size: 18px;
+            line-height: 28px;
+            text-transform: none;
+        }
+    } @else if $s == 6 {
+        font-family: 'PT Root UI';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 140%;
+        text-transform: lowercase;
+
+        @include md {
+            font-size: 18px;
+            line-height: 28px;
+            text-transform: none;
+        }
+    }
+}
+
+@mixin flex($ff) {
+    display: flex;
+    
+    @if $ff == lt {
+        justify-content: flex-start;
+        align-items: flex-start;
+    } @else if $ff == lc {
+        justify-content: flex-start;
+        align-items: center;
+    } @else if $ff == lb {
+        justify-content: flex-start;
+        align-items: flex-end;
+    } @else if $ff == ct {
+        justify-content: center;
+        align-items: flex-start;
+    } @else if $ff == cc {
+        justify-content: center;
+        align-items: center;
+    } @else if $ff == cb {
+        justify-content: center;
+        align-items: flex-end;
+    } @else if $ff == rt {
+        justify-content: flex-end;
+        align-items: flex-start;
+    } @else if $ff == rc {
+        justify-content: flex-end;
+        align-items: center;
+    } @else if $ff == rb {
+        justify-content: flex-end;
+        align-items: flex-end;
+    } @else if $ff == st {
+        justify-content: space-between;
+        align-items: flex-start;
+    } @else if $ff == sc {
+        justify-content: space-between;
+        align-items: center;
+    } @else if $ff == sb {
+        justify-content: space-between;
+        align-items: flex-end;
+    } @else if $ff == ls {
+        justify-content: flex-start;
+        align-items: stretch;
+    } @else if $ff == cs {
+        justify-content: center;
+        align-items: stretch;
+    } @else if $ff == rs {
+        justify-content: flex-end;
+        align-items: stretch;
+    } @else if $ff == ss {
+        justify-content: space-between;
+        align-items: stretch;
+    } @else if $ff == sn {
+        justify-content: space-between;
+        align-items: baseline;
+    } @else {
+    
+    }
+}
+
+@mixin flexcol($fw) {
+    @if $fw == w {
+        flex-flow: column wrap;
+    } @else if $fw == n {
+        flex-flow: column nowrap;
+    }
+}
+
+@mixin ul {
+    @include flex(lc);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@mixin pseudo {
+    position: absolute;
+    display: block;
+    content: '';
+}
+
+@mixin icon-before($src) {
+    @include pseudo;
+    top: 0;
+    left: 0;
+    background: url($src);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+@mixin icon-after($src) {
+    @include pseudo;
+    top: 0;
+    right: 0;
+    background: url($src);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+}

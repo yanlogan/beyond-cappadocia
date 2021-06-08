@@ -1,0 +1,31 @@
+mixin logo(size='')
+  if size == 'sm'
+    .logo
+      img(src="./static/images/svg/logo-sm.svg", alt="")
+  else
+    .logo
+      img(src="./static/images/svg/logo.svg", alt="")
+
+mixin btn(text='', size='', icon=null)
+  if size == 'sm'
+    button(class='btn btn_sm')
+      span #{text}
+      if icon
+        i.icon.btn-icon
+          img(src=icon, alt="")
+  else
+    button(class='btn')
+      span #{text}
+      if icon
+        if icon
+          i.icon.btn-icon
+            img(src=icon, alt="")
+
+mixin social-link(type='', link='#')
+  a(href=link).social-link
+    i.icon
+      if type=='ig'
+        img(src="./static/images/svg/social-ig.svg", alt="ig")
+      else if type=='fb'
+        img(src="./static/images/svg/social-fb.svg", alt="fb")
+        

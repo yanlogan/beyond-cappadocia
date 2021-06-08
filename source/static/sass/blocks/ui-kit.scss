@@ -1,0 +1,25 @@
+@import '../global/variables.scss';
+
+.btn {
+  @include flex(lc);
+  padding: 9px 24px;
+  font-size: 18px;
+  line-height: 120%;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  border-radius: 100px;
+  background-color: $orange;
+  transition: .2s;
+
+  @include sm {
+    padding: 24px 32px;
+  }
+
+  &-icon {
+    margin-left: 49px;
+  }
+}
+
+.social-link {
+  display: block;
+}

@@ -1,0 +1,24 @@
+doctype html
+html(lang="ru")
+  include ../include/head
+  body
+    .root
+      include ../include/header
+
+      main
+        section.hero
+          .hero__bg
+          .container
+            .hero-wrap
+              .hero__logo
+                +logo
+              h1.hero__title For those who seek more
+              h4.hero__text
+                | More art, more connection, more life&nbsp;- 
+                | The Beyond is a unique gathering for seekers of meaning & magic
+              .hero__btn
+                +btn('Join us')
+
+      include ../include/footer
+
+  include ../include/scripts 
